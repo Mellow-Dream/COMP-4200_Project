@@ -4,81 +4,93 @@ package com.example.comp_4200project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.os.AsyncTask;
 import android.os.Bundle;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<MyData> dataSets = new ArrayList<>();
-    RecyclerView recyclerView;
+    private EditText StudentID_editText;
+    private EditText StudentName_editText;
+    private EditText firstNAme_editText;
+    private EditText lastName_editText;
+    private EditText dateofBirth_editText;
+    private EditText faculty_editText;
+    private EditText height_editText;
+    private EditText weight_editText;
+    private EditText team_editText;
+    private EditText jerseyNumber_editText;
+
+    Button insert_button;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StudentID_editText = findViewById(R.id.StudentID_editText);
 
-        recyclerView = findViewById(R.id.recyler_view);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        insert_button = findViewById(R.id.insert_button);
+        insert_button.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        dataSets.add(new MyData("Card 1", R.drawable.cat, "yellow"));
-        dataSets.add(new MyData("Card 2", R.drawable.dog, "blue"));
-        dataSets.add(new MyData("Card 3", R.drawable.frog, "red"));
+                EditText studentIdEditText = findViewById(R.id.StudentID_editText);
+                int studentId = Integer.parseInt(studentIdEditText.getText().toString());
 
+                EditText studentNameEditText = findViewById(R.id.studentName_editText);
+                String studentName = studentNameEditText.getText().toString();
 
-        MyAdapter myAdapter = new MyAdapter(dataSets, MainActivity.this);
-        recyclerView.setAdapter(myAdapter);
+                EditText firstNameEditText = findViewById(R.id.firstName_editText);
+                String firstName = firstNameEditText.getText().toString();
 
+                EditText lastNameEditText = findViewById(R.id.lastName_editText);
+                String lastName = lastNameEditText.getText().toString();
 
-    }
-    private static final String DB_URL = "jdbc:mysql://127.0.0.1:3306/comp-4200-project";
-    private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "yanoxD123!";
+                EditText dateofBirthEditText = findViewById(R.id.dateofBirth_editText);
+                String dateofBirth = dateofBirthEditText.getText().toString();
 
-    public static void main(String[] args) {
-        insertAndRetrieveData("Colin Moran");
-    }
+                EditText facultyEditText = findViewById(R.id.facultyText_editText);
+                String faculty = facultyEditText.getText().toString();
 
-    public static void insertAndRetrieveData(String name) {
-        Connection conn = null;
-        PreparedStatement insertStatement = null;
-        PreparedStatement retrieveStatement = null;
-        ResultSet resultSet = null;
+                EditText heightEditText = findViewById(R.id.height_editText);
+                int height = Integer.parseInt(heightEditText.getText().toString());
 
-        try {
-            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-            String insertQuery = "INSERT INTO name (firstName) VALUES (?)";
-            insertStatement = conn.prepareStatement(insertQuery);
-            insertStatement.setString(1, name);
-            insertStatement.executeUpdate();
+                EditText weightEditText = findViewById(R.id.weight_editText);
+                int weight = Integer.parseInt(weightEditText.getText().toString());
 
-            String retrieveQuery = "SELECT * FROM name";
-            retrieveStatement = conn.prepareStatement(retrieveQuery);
-            resultSet = retrieveStatement.executeQuery();
+                EditText teamEditText = findViewById(R.id.team_editText);
+                String team = teamEditText.getText().toString();
 
-            while (resultSet.next()) {
-                String retrievedName = resultSet.getString("firstName");
-                System.out.println("Retrieved name: " + retrievedName);
+                EditText jerseyNumberText = findViewById(R.id.jerseyNumber_editText);
+                int jerseyNumber = Integer.parseInt(jerseyNumberText.getText().toString());
+
+                DatabasExecutor.insertAthleteDataAsync(studentId, studentName, firstName, lastName, dateofBirth, faculty, height, weight, team, jerseyNumber, new DatabasExecutor.OnCompleteListener() {
+                    @Override
+                    public void onComplete() {
+                        // Handle completion, e.g., show a toast message
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                Toast.makeText(MainActivity.this, "Data inserted successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (resultSet != null) resultSet.close();
-                if (retrieveStatement != null) retrieveStatement.close();
-                if (insertStatement != null) insertStatement.close();
-                if (conn != null) conn.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+        }));
+
+}
 }
