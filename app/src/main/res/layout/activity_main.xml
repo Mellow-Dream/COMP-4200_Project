@@ -1,18 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/StudentID_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student ID"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/studentName_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/StudentID_editText"
+        android:hint="Enter Student Name"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/firstName_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/studentName_editText"
+        android:hint="Enter First Name"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/lastName_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstName_editText"
+        android:hint="Enter Last Name"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/dateofBirth_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lastName_editText"
+        android:hint="Enter Date of Birth"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/facultyText_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateofBirth_editText"
+        android:hint="Enter Faculty"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/height_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/facultyText_editText"
+        android:hint="Enter Height"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/weight_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/height_editText"
+        android:hint="Enter Weight"
+        android:inputType="number" />
+    <EditText
+        android:id="@+id/team_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weight_editText"
+        android:hint="Enter Team Name"
+        android:inputType="text" />
+    <EditText
+        android:id="@+id/jerseyNumber_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/team_editText"
+        android:hint="Enter JerseyNumber"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/insert_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@id/jerseyNumber_editText"
+        android:layout_marginTop="16dp"
+        android:text="Insert Data"
+        android:onClick="insertData" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/retrieve_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/insert_button"
+        android:layout_marginTop="16dp"
+        android:text="Retrieve Data"
+        android:onClick="retrieveData" />
+
+</RelativeLayout>
