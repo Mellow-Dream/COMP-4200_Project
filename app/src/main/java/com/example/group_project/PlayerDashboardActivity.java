@@ -42,6 +42,7 @@ public class PlayerDashboardActivity extends AppCompatActivity {
                 // First check that a student ID has been given
                 studentID = et_studentID.getText().toString();
                 if(studentID.isEmpty()){
+                    // Make this an alert dialog instead
                     Toast.makeText(PlayerDashboardActivity.this, "Enter StudentID first!", Toast.LENGTH_LONG).show();
                     return;
                 }

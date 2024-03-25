@@ -3,6 +3,7 @@ package com.example.group_project;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +15,7 @@ import android.widget.Toast;
 public class AddAthleteActivity extends AppCompatActivity {
 
     EditText et_studentID, et_studentName, et_dob, et_faculty, et_height, et_weight, et_team, et_jerseyNumber;
-    Button btn_submit, btn_getData;
+    Button btn_return, btn_submit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +32,21 @@ public class AddAthleteActivity extends AppCompatActivity {
         et_team = findViewById(R.id.editText_team);
         et_jerseyNumber = findViewById(R.id.editText_jerseyNumber);
 
+        btn_return = findViewById(R.id.button_add_athlete_return);
         btn_submit = findViewById(R.id.button_submit);
-        btn_getData = findViewById(R.id.button_retrieve);
 
         // Create Database instance (context, DBName, CursorFactory, version)
         DBHelper dbh = new DBHelper(getApplicationContext(), "bioinformatics", null, 1);
 
         // Create button operations
+        btn_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), CoachDashboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn_submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,46 +76,6 @@ public class AddAthleteActivity extends AppCompatActivity {
                     Log.d("test_submit", "AddAthleteActivity: New athlete is successfully added: " + studentID);
                     Toast.makeText(AddAthleteActivity.this, "New athlete added!", Toast.LENGTH_LONG).show();
                 }
-            }
-        });
-
-        // This can be used in another activity...
-        btn_getData.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Get the table data
-                Log.d("test_display", "AddAthleteActivity: GetData button has been initiated.");
-
-                Cursor cursor = dbh.displayAllAthleteData();
-                String data = "";
-
-                if(cursor == null){
-                    // An error occurred
-                    Log.d("test_display", "AddAthleteActivity: displayAthleteData has returned null.");
-                    Toast.makeText(AddAthleteActivity.this, "ERROR: Cannot get table data!", Toast.LENGTH_LONG).show();
-                } else if(cursor.getCount() == 0) {
-                    // There is no data to be shown
-                    Log.d("test_display", "AddAthleteActivity: Athlete table contains no data.");
-                    // Toast.makeText(AddAthleteActivity.this, "No Athlete data to display!", Toast.LENGTH_LONG).show();
-                    data += "No data!";
-                } else {
-                    while(cursor.moveToNext()){     // Move to next row
-                        Log.d("test_display", "AddAthleteActivity: Creating data output...");
-                        String temp = "StudentID: " + cursor.getString(1) + "\nStudent Name: " + cursor.getString(2)
-                                + "\nDate of Birth: " + cursor.getString(3) + "\nFaculty: " + cursor.getString(4)
-                                + "\nHeight(cm): " + cursor.getString(5) + ", Weight(kg): " + cursor.getString(6)
-                                + "\nTeam: " + cursor.getString(7) + ", Jersey: " + cursor.getString(8);
-                        data += temp + "\n\n";
-                    }
-                }
-
-                Log.d("test_display", "AddAthleteActivity: displaying Athlete data...");
-
-                AlertDialog.Builder ad = new AlertDialog.Builder(AddAthleteActivity.this);
-                ad.setTitle("Athlete Table Data");
-                ad.setMessage(data);
-                ad.setCancelable(true);
-                ad.show();
             }
         });
     }
