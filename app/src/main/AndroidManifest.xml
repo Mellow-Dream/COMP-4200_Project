@@ -22,6 +22,17 @@
 
             </intent-filter>
         </activity>
+
+        <activity android:name=".barChartActivity" android:label="Bar Chart Activity" />
+        <activity android:name=".mainMenu" android:label="Main Menu" />
+        <activity android:name=".biodexActivity" android:label="biodexActivity" />
+        <activity android:name=".bodpodActivity" android:label="bodpod Activity" />
+        <activity android:name=".wingateActivity" android:label="wingate Activity" />
+        <activity android:name=".athleteRoster" android:label="athlete Roster" />
+        <activity android:name=".addBiodex" android:label="add biodex" />
+        <activity android:name=".addBodpod" android:label="add bodpod" />
+        <activity android:name=".addWingate" android:label="add wingate" />
+
     </application>
 
 </manifest>

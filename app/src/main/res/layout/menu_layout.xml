@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <Button
+        android:id="@+id/button_athleteRoster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Athlete Roster"/>
+    <Button
+        android:id="@+id/button_bodpodTestView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Bodpod Testing"/>
+    <Button
+        android:id="@+id/button_biodexTestView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Biodex Testing"/>
+
+
+    <Button
+        android:id="@+id/button_wingateTestView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Wingate Testing"/>
+
+    <Button
+        android:id="@+id/button_addAthlete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add an Athlete"/>
+    <Button
+        android:id="@+id/button_addBodpod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Bodpod Test"/>
+
+    <Button
+        android:id="@+id/button_addBiodex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Biodex Test"/>
+    <Button
+        android:id="@+id/button_addWingate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Wingate Test"/>
+
+
+</LinearLayout>

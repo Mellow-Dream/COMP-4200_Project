@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="16dp">
+    <EditText
+        android:id="@+id/editText_studentID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student ID"/>
+
+    <EditText
+        android:id="@+id/editText_tee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter tee"/>
+
+    <EditText
+        android:id="@+id/editText_ree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter ree"/>
+
+    <EditText
+        android:id="@+id/editText_bodyFat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Body Fat"/>
+    <EditText
+        android:id="@+id/editText_fatFree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Fat Free"/>
+    <Button
+        android:id="@+id/button_submitBiopod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"/>
+    <Button
+        android:id="@+id/button_getBiopod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GET DATA"/>
+
+</LinearLayout>
