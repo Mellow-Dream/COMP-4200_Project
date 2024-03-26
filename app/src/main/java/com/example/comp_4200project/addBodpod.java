@@ -1,5 +1,6 @@
 package com.example.comp_4200project;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class addBodpod extends AppCompatActivity {
 
     EditText  et_studentID, et_tee, et_ree, et_bodyFat, et_fatFree;
-    Button  btn_submit, btn_getBiopod;
+    Button  btn_submit, btn_return;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +28,7 @@ public class addBodpod extends AppCompatActivity {
         et_fatFree = findViewById(R.id.editText_fatFree);
 
         btn_submit = findViewById(R.id.button_submitBiopod);
-        btn_getBiopod = findViewById(R.id.button_getBiopod);
+        btn_return = findViewById(R.id.button_bodpod_return);
 
         DBHelper dbh = new DBHelper(getApplicationContext(), "bioinformatics", null, 1);
 
@@ -46,7 +47,7 @@ public class addBodpod extends AppCompatActivity {
                 Float ff = Float.parseFloat(et_fatFree.getText().toString());
 
                 // Now add the values to the athlete table (8 values)
-                long row = dbh.addBodpodData(studentID,tee,ree,bf,ff);
+                long row = dbh.addNewBodpodTest(studentID,tee,ree,bf,ff);
 
                 if(row < 0){
                     // An error occurred
@@ -59,43 +60,12 @@ public class addBodpod extends AppCompatActivity {
             }
         });
 
-        btn_getBiopod.setOnClickListener(new View.OnClickListener() {
+        btn_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Get the table data
-                Log.d("test_display", "Biodex: GetData button has been initiated.");
-
-                Cursor cursor = dbh.displayBodpodData();
-                String data = "";
-
-                if(cursor == null){
-                    // An error occurred
-                    Log.d("test_display", "Bodpod: displayBodpod has returned null.");
-                    Toast.makeText(addBodpod.this, "ERROR: Cannot get table data!", Toast.LENGTH_LONG).show();
-                } else if(cursor.getCount() == 0) {
-                    // There is no data to be shown
-                    Log.d("test_display", "Bodpod: Athlete table contains no data.");
-                    // Toast.makeText(MainActivity.this, "No Athlete data to display!", Toast.LENGTH_LONG).show();
-                    data += "No data!";
-                } else {
-                    while(cursor.moveToNext()){     // Move to next row
-                        Log.d("test_display", "Bodpob: Creating data output...");
-                        String temp = "StudentID: " + cursor.getString(0) + "\nTee: " + cursor.getString(1)
-                                + "\nRee: " + cursor.getString(2) + "\nBody Fat: " + cursor.getString(3)
-                                + "\nFat Free: "+ cursor.getString(4);
-                        data += temp + "\n\n";
-                    }
-                }
-
-                Log.d("test_display", "Bodpod: displaying Bodpod data...");
-
-                AlertDialog.Builder ad = new AlertDialog.Builder(addBodpod.this);
-                ad.setTitle("bodpod Data");
-                ad.setMessage(data);
-                ad.setCancelable(true);
-                ad.show();
+                Intent intent = new Intent(getApplicationContext(), CoachDashboardActivity.class);
+                startActivity(intent);
             }
         });
-
     }
 }

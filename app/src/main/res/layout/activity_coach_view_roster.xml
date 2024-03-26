@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".bodpodActivity"
+    tools:context=".CoachViewRosterActivity"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView_bodpod_title"
+        android:id="@+id/textView_roster_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="test"
@@ -16,14 +16,14 @@
         android:textSize="25dp"/>
 
     <Button
-        android:id="@+id/button_bodpod_return"
+        android:id="@+id/button_roster_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go Back"
         android:layout_marginBottom="20dp"/>
 
     <TextView
-        android:id="@+id/textView_bodpod_view"
+        android:id="@+id/textView_roster_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text=""

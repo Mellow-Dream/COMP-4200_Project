@@ -6,83 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="50dp"
+    android:layout_margin="25dp">
 
     <EditText
-        android:id="@+id/editText_studentID"
+        android:id="@+id/editText_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Student ID"/>
+        android:hint="Enter Username"
+        android:paddingBottom="25dp"/>
 
     <EditText
-        android:id="@+id/editText_studentName"
+        android:id="@+id/editText_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Student Name"/>
-
-    <EditText
-        android:id="@+id/editText_dob"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter the Date of Birth (YYYY-MM-DD)"/>
-
-    <EditText
-        android:id="@+id/editText_faculty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter faculty"/>
-
-    <EditText
-        android:id="@+id/editText_height"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter height (cm)"/>
-
-    <EditText
-        android:id="@+id/editText_weight"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter weight (kg)"/>
-
-    <EditText
-        android:id="@+id/editText_team"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter team"/>
-
-    <EditText
-        android:id="@+id/editText_jerseyNumber"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter jersey number"/>
+        android:hint="Enter Password"
+        android:inputType="textPassword"
+        android:paddingBottom="25dp"/>
 
     <Button
-        android:id="@+id/button_submit"
+        android:id="@+id/button_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SUBMIT"/>
-
-    <Button
-        android:id="@+id/button_retrieve"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="GET DATA"/>
-    <Button
-        android:id="@+id/button_barChart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Display Bar Chart"/>
-    <Button
-        android:id="@+id/button_mainMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Main Menu"/>
-
-
-
-    <com.github.mikephil.charting.charts.BarChart
-        android:id="@+id/bar_chart"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"/>
+        android:text="Login" />
 
 </LinearLayout>

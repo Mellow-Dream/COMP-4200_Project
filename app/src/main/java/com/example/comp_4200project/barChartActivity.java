@@ -39,7 +39,7 @@ public class barChartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Cursor cursor = dbh.displayAthleteData();
+                Cursor cursor = dbh.displayAllAthleteData();
                 List<BarEntry> entries = new ArrayList<>();
                 List<String> labels = new ArrayList<>();
                 int index = 0;

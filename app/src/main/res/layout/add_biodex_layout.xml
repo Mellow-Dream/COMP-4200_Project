@@ -7,6 +7,23 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:padding="16dp">
+    <TextView
+        android:id="@+id/textView_add_biodex_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adding Biodex!"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/button_biodex_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"/>
+
+
     <EditText
         android:id="@+id/editText_studentID"
         android:layout_width="match_parent"
@@ -40,10 +57,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SUBMIT"/>
-    <Button
-        android:id="@+id/button_getBiodex"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="GET DATA"/>
 
 </LinearLayout>

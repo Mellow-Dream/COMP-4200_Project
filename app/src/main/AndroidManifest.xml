@@ -28,10 +28,15 @@
         <activity android:name=".biodexActivity" android:label="biodexActivity" />
         <activity android:name=".bodpodActivity" android:label="bodpod Activity" />
         <activity android:name=".wingateActivity" android:label="wingate Activity" />
-        <activity android:name=".athleteRoster" android:label="athlete Roster" />
+        <activity android:name=".addAthleteRoster" android:label="athlete Roster" />
         <activity android:name=".addBiodex" android:label="add biodex" />
         <activity android:name=".addBodpod" android:label="add bodpod" />
         <activity android:name=".addWingate" android:label="add wingate" />
+        <activity android:name=".AddAthleteActivity" android:label="add athlete" />
+        <activity android:name=".CoachDashboardActivity" android:label="add wingate" />
+        <activity android:name=".CoachViewRosterActivity" android:label="add wingate" />
+        <activity android:name=".PlayerDashboardActivity" android:label="add wingate" />
+        <activity android:name=".PlayerViewActivity" android:label="add wingate" />
 
     </application>
 

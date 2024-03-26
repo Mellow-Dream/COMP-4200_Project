@@ -7,6 +7,22 @@
     tools:context=".MainActivity"
     android:orientation="vertical"
     android:padding="16dp">
+    <TextView
+        android:id="@+id/textView_add_wingate_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adding Wingate!"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/button_wingate_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"/>
+
     <EditText
         android:id="@+id/editText_studentID"
         android:layout_width="match_parent"
@@ -36,10 +52,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SUBMIT"/>
-    <Button
-        android:id="@+id/button_getWingate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="GET DATA"/>
 
 </LinearLayout>

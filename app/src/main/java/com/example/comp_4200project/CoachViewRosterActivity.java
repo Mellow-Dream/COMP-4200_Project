@@ -10,21 +10,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class bodpodActivity extends AppCompatActivity {
+public class CoachViewRosterActivity extends AppCompatActivity {
 
-    TextView tv_title, tv_bodpod_view;
+    TextView tv_title, tv_roster_view;
     Button btn_return;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.bodpod_layout);
+        setContentView(R.layout.activity_coach_view_roster);
 
-        tv_title = findViewById(R.id.textView_bodpod_title);
-        tv_bodpod_view = findViewById(R.id.textView_bodpod_view);
-        btn_return = findViewById(R.id.button_bodpod_return);
+        tv_title = findViewById(R.id.textView_roster_title);
+        tv_roster_view = findViewById(R.id.textView_roster_view);
+        btn_return = findViewById(R.id.button_roster_return);
 
-        tv_title.setText("Men's Hockey Bodpod");
+        tv_title.setText("Men's Hockey Roster");
 
         btn_return.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,37 +41,37 @@ public class bodpodActivity extends AppCompatActivity {
 
         // Get the team roster and display info in the main textView
         DBHelper dbh = new DBHelper(getApplicationContext(), "bioinformatics", null, 1);
-        Cursor bodpodCursor = dbh.displayAllBodpodData();
+        Cursor athleteCursor = dbh.displayAllAthleteData();
 
         // Check that data exists
-        if(bodpodCursor == null){
+        if(athleteCursor == null){
             // Something went wrong...
             Log.d("test_rosterView", "ViewRoster: Error when setting athleteCursor, aborting.");
-            AlertDialog.Builder ad = new AlertDialog.Builder(bodpodActivity.this);
+            AlertDialog.Builder ad = new AlertDialog.Builder(CoachViewRosterActivity.this);
             ad.setTitle("ERROR");
-            ad.setMessage("Could not get bodpod data.");
+            ad.setMessage("Could not get roster data.");
             ad.setCancelable(true);
             ad.show();
         }
-        else if(bodpodCursor.getCount() == 0) {
+        else if(athleteCursor.getCount() == 0) {
             // There is no roster data available
-            Log.d("test_bodpodView", "ViewBodpod: No bodpod available.");
-            tv_bodpod_view.setText("No bodpod available!");
+            Log.d("test_rosterView", "ViewRoster: No roster available.");
+            tv_roster_view.setText("No roster available!");
         }
         else {
             // Show some of the roster data, don't need all of it
             Log.d("test_rosterView", "ViewRoster: Creating roster output...");
             String data = "";
-            while(bodpodCursor.moveToNext()) {
-                String temp = "StudentID: " + bodpodCursor.getString(0)
-                        + "\nTee: " + bodpodCursor.getString(1)
-                        + "\nRee: " + bodpodCursor.getString(2)
-                        + "\nBody Fat: " + bodpodCursor.getString(3)
-                        + "\nFat Free " + bodpodCursor.getString(4);
+            while(athleteCursor.moveToNext()) {
+                String temp = "StudentID: " + athleteCursor.getString(1)
+                        + "\nStudent Name: " + athleteCursor.getString(2)
+                        + "\nHeight(cm): " + athleteCursor.getString(5)
+                        + ", Weight(kg): " + athleteCursor.getString(6)
+                        + "\nJersey Number: " + athleteCursor.getString(8);
                 data += temp + "\n\n";
             }
 
-            tv_bodpod_view.setText(data);
+            tv_roster_view.setText(data);
         }
     }
 }
