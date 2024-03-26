@@ -20,11 +20,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Go Back"/>
+    <Button
+        android:id="@+id/button_player_displayAthleteBarChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Athlete Graph"/>
+    <Button
+        android:id="@+id/button_player_displayBodpodBarChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Bodpod Graph"/>
+    <Button
+        android:id="@+id/button_player_displayWingateBarChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Wingate Graph"/>
+    <Button
+        android:id="@+id/button_player_displayBiodexBarChart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Biodex Graph"/>
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
 
     <TextView
         android:id="@+id/textView_player_view_result"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"/>
+
 
 </LinearLayout>

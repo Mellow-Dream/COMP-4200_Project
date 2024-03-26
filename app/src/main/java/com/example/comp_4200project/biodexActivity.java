@@ -64,11 +64,11 @@ public class biodexActivity extends AppCompatActivity {
             Log.d("test_biodexView", "View biodex: Creating biodex output...");
             String data = "";
             while(biodexCursor.moveToNext()) {
-                String temp = "StudentID: " + biodexCursor.getString(0)
-                        + "\nLeft Quad Max: " + biodexCursor.getString(1)
-                        + "\nRight Quad Max: " + biodexCursor.getString(2)
-                        + "\nLeft Hamstring Max: " + biodexCursor.getString(3)
-                        + "\nRight Hamstring Max " + biodexCursor.getString(4);
+                String temp = "StudentID: " + biodexCursor.getString(1)
+                        + "\nLeft Quad Max: " + biodexCursor.getString(2)
+                        + "\nRight Quad Max: " + biodexCursor.getString(3)
+                        + "\nLeft Hamstring Max: " + biodexCursor.getString(4)
+                        + "\nRight Hamstring Max " + biodexCursor.getString(5);
                 data += temp + "\n\n";
             }
 

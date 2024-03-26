@@ -31,17 +31,20 @@ import androidx.annotation.Nullable;
 
             // Second Bodpod table
             query = "CREATE TABLE bodpod(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + "tee INTEGER, ree INTEGER, body_fat REAL, fat_free REAL)";
+                    + "studentID TEXT,tee INTEGER, ree INTEGER, body_fat REAL, fat_free REAL,"
+                    + "FOREIGN KEY (studentID) REFERENCES athlete(studentID))";
             db.execSQL(query);
 
             // Third Wingate table
             query = "CREATE TABLE wingate(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + "min_power REAL, peak_power REAL, avg_power REAL)";
+                    + "studentID TEXT,min_power REAL, peak_power REAL, avg_power REAL,"
+                    + "FOREIGN KEY (studentID) REFERENCES athlete(studentID))";
             db.execSQL(query);
 
             // Fourth Biodex table
             query = "CREATE TABLE biodex(_id INTEGER PRIMARY KEY AUTOINCREMENT, "
-                    + "l_quad_max REAL, r_quad_max REAL, l_ham_max REAL, r_ham_max REAL)";
+                    + "studentID TEXT,l_quad_max REAL, r_quad_max REAL, l_ham_max REAL, r_ham_max REAL,"
+                    + "FOREIGN KEY (studentID) REFERENCES athlete(studentID))";
             db.execSQL(query);
         }
 
@@ -81,7 +84,7 @@ import androidx.annotation.Nullable;
             ContentValues contentValues = new ContentValues();
 
             // Add data for the Bodpod table
-            contentValues.put("_id", studentID);
+            contentValues.put("studentID", studentID);
             contentValues.put("tee", tee);
             contentValues.put("ree", ree);
             contentValues.put("body_fat", body_fat);
@@ -96,7 +99,7 @@ import androidx.annotation.Nullable;
             ContentValues contentValues = new ContentValues();
 
             // Add data for the Wingate table
-            contentValues.put("_id", studentID);
+            contentValues.put("studentID", studentID);
             contentValues.put("min_power", min_power);
             contentValues.put("peak_power", peak_power);
             contentValues.put("avg_power", avg_power);
@@ -111,11 +114,11 @@ import androidx.annotation.Nullable;
             ContentValues contentValues = new ContentValues();
 
             // Add data for the Biodex table
-            contentValues.put("_id", studentID);
-            contentValues.put("left_quad_max", left_quad_max);
-            contentValues.put("right_quad_max", right_quad_max);
-            contentValues.put("left_ham_max", left_ham_max);
-            contentValues.put("right_ham_max", right_ham_max);
+            contentValues.put("studentID", studentID);
+            contentValues.put("l_quad_max", left_quad_max);
+            contentValues.put("r_quad_max", right_quad_max);
+            contentValues.put("l_ham_max", left_ham_max);
+            contentValues.put("r_ham_max", right_ham_max);
 
             // Returns row number on success, negative otherwise
             return db.insert(biodexTable, null, contentValues);
@@ -152,23 +155,33 @@ import androidx.annotation.Nullable;
         }
 
         /* Methods for retrieving select data from tables for display (Players) */
+        public Cursor displayAthleteTest(String studentID) {
+            SQLiteDatabase db = getReadableDatabase();
+            String[] selectionsArg = {studentID};
+            Cursor cursor = db.rawQuery("SELECT * FROM " + athleteTable + " WHERE studentID=?", selectionsArg);
+
+            return cursor;
+        }
         public Cursor displayBodpodTest(String studentID) {
             SQLiteDatabase db = getReadableDatabase();
-            Cursor cursor = db.rawQuery("SELECT * FROM " + bodpodTable + " WHERE studentID=?", new String[]{studentID});
+            String[] selectionsArg = {studentID};
+            Cursor cursor = db.rawQuery("SELECT * FROM " + bodpodTable + " WHERE studentID=?", selectionsArg);
 
             return cursor;
         }
 
         public Cursor displayWingateTest(String studentID) {
             SQLiteDatabase db = getReadableDatabase();
-            Cursor cursor = db.rawQuery("SELECT * FROM " + wingateTable + " WHERE studentID=?", new String[]{studentID});
+            String[] selectionsArg = {studentID};
+            Cursor cursor = db.rawQuery("SELECT * FROM " + wingateTable + " WHERE studentID=?", selectionsArg);
 
             return cursor;
         }
 
         public Cursor displayBiodexTest(String studentID) {
             SQLiteDatabase db = getReadableDatabase();
-            Cursor cursor = db.rawQuery("SELECT * FROM " + biodexTable + " WHERE studentID=?", new String[]{studentID});
+            String[] selectionsArg = {studentID};
+            Cursor cursor = db.rawQuery("SELECT * FROM " + biodexTable + " WHERE studentID=?", selectionsArg);
 
             return cursor;
         }

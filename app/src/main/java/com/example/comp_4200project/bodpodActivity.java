@@ -63,11 +63,11 @@ public class bodpodActivity extends AppCompatActivity {
             Log.d("test_rosterView", "ViewRoster: Creating roster output...");
             String data = "";
             while(bodpodCursor.moveToNext()) {
-                String temp = "StudentID: " + bodpodCursor.getString(0)
-                        + "\nTee: " + bodpodCursor.getString(1)
-                        + "\nRee: " + bodpodCursor.getString(2)
-                        + "\nBody Fat: " + bodpodCursor.getString(3)
-                        + "\nFat Free " + bodpodCursor.getString(4);
+                String temp = "StudentID: " + bodpodCursor.getString(1)
+                        + "\nTee: " + bodpodCursor.getString(2)
+                        + "\nRee: " + bodpodCursor.getString(3)
+                        + "\nBody Fat: " + bodpodCursor.getString(4)
+                        + "\nFat Free " + bodpodCursor.getString(5);
                 data += temp + "\n\n";
             }
 

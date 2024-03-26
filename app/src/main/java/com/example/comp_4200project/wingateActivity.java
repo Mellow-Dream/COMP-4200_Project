@@ -64,10 +64,10 @@ public class wingateActivity extends AppCompatActivity {
             Log.d("test_wingateView", "View Wingate: Creating wingate output...");
             String data = "";
             while(wingateCursor.moveToNext()) {
-                String temp = "StudentID: " + wingateCursor.getString(0)
-                        + "\nMinimum Power: " + wingateCursor.getString(1)
-                        + "\nPeak Power: " + wingateCursor.getString(2)
-                        + "\nAverage Power:  " + wingateCursor.getString(3);
+                String temp = "StudentID: " + wingateCursor.getString(1)
+                        + "\nMinimum Power: " + wingateCursor.getString(2)
+                        + "\nPeak Power: " + wingateCursor.getString(3)
+                        + "\nAverage Power:  " + wingateCursor.getString(4);
                 data += temp + "\n\n";
             }
 
