@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,10 @@ public class MainActivity extends AppCompatActivity {
         // Init elements
         et_username = findViewById(R.id.editText_username);
         btn_login = findViewById(R.id.button_login);
+
+        ImageView imageView = findViewById(R.id.imageView);
+        imageView.setImageResource(R.drawable.uowlogo);
+
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
