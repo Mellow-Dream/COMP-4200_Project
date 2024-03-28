@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addBiodex"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView_add_biodex_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adding Biodex!"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/button_biodex_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/editText_studentID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student ID"/>
+
+    <EditText
+        android:id="@+id/editText_L_quad_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Left Quad Max"/>
+
+    <EditText
+        android:id="@+id/editText_R_quad_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Right Quad Max"/>
+
+    <EditText
+        android:id="@+id/editText_L_ham_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Left Hamstring Max"/>
+
+    <EditText
+        android:id="@+id/editText_R_ham_max"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Right Hamstring Max"/>
+
+    <Button
+        android:id="@+id/button_submitBio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

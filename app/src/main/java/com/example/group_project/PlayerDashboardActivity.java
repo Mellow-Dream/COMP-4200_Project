@@ -33,8 +33,6 @@ public class PlayerDashboardActivity extends AppCompatActivity {
         Intent i = getIntent();
         tv_welcome.setText("Welcome " + i.getStringExtra("username") + "!");
 
-        // Set the student ID field if it exists
-
         // Direct to activity based on button
         btn_viewTesting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +49,7 @@ public class PlayerDashboardActivity extends AppCompatActivity {
                 // Intent intent = new Intent(getApplicationContext(), PlayerViewBodpodActivity.class);
                 Intent intent = new Intent(getApplicationContext(), PlayerViewActivity.class);
                 intent.putExtra("studentID", studentID);
+                intent.putExtra("username", i.getStringExtra("username"));
                 startActivity(intent);
             }
         });
@@ -72,5 +71,6 @@ public class PlayerDashboardActivity extends AppCompatActivity {
         // Set the studentID editText
         Intent i = getIntent();
         et_studentID.setText(i.getStringExtra("studentID"));
+        tv_welcome.setText("Welcome " + i.getStringExtra("username") + "!");
     }
 }

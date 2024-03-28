@@ -114,10 +114,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
         // Add data for the Biodex table
         contentValues.put("studentID", studentID);
-        contentValues.put("left_quad_max", left_quad_max);
-        contentValues.put("right_quad_max", right_quad_max);
-        contentValues.put("left_ham_max", left_ham_max);
-        contentValues.put("right_ham_max", right_ham_max);
+        contentValues.put("l_quad_max", left_quad_max);
+        contentValues.put("r_quad_max", right_quad_max);
+        contentValues.put("l_ham_max", left_ham_max);
+        contentValues.put("r_ham_max", right_ham_max);
 
         // Returns row number on success, negative otherwise
         return db.insert(biodexTable, null, contentValues);
@@ -154,6 +154,14 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
     /* Methods for retrieving select data from tables for display (Players) */
+    public Cursor displayAthleteTest(String studentID) {
+        SQLiteDatabase db = getReadableDatabase();
+        String[] selectionsArg = {studentID};
+        Cursor cursor = db.rawQuery("SELECT * FROM " + athleteTable + " WHERE studentID=?", selectionsArg);
+
+        return cursor;
+    }
+
     public Cursor displayBodpodTest(String studentID) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + bodpodTable + " WHERE studentID=?", new String[]{studentID});

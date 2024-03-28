@@ -25,7 +25,7 @@ public class CoachViewRosterActivity extends AppCompatActivity {
         tv_roster_view = findViewById(R.id.textView_roster_view);
         btn_return = findViewById(R.id.button_roster_return);
 
-        tv_title.setText("Men's Hockey Roster");
+        tv_title.setText("Men's Hockey Roster");    // Temp
 
         btn_return.setOnClickListener(new View.OnClickListener() {
             @Override
