@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddAthleteActivity"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView_add_player_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adding Athlete!"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/button_add_athlete_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/editText_studentID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student ID"/>
+
+    <EditText
+        android:id="@+id/editText_studentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student Name"/>
+
+    <EditText
+        android:id="@+id/editText_dob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter the Date of Birth (YYYY-MM-DD)"/>
+
+    <EditText
+        android:id="@+id/editText_faculty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter faculty"/>
+
+    <EditText
+        android:id="@+id/editText_height"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter height (cm)"/>
+
+    <EditText
+        android:id="@+id/editText_weight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter weight (kg)"/>
+
+    <EditText
+        android:id="@+id/editText_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter team"/>
+
+    <EditText
+        android:id="@+id/editText_jerseyNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter jersey number"/>
+
+    <Button
+        android:id="@+id/button_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

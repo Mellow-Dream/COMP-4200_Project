@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addBodpod"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView_add_bodpod_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adding Bodpod!"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/button_bodpod_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/editText_studentID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student ID"/>
+
+    <EditText
+        android:id="@+id/editText_tee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter TEE"/>
+
+    <EditText
+        android:id="@+id/editText_ree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter REE"/>
+
+    <EditText
+        android:id="@+id/editText_bodyFat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Body Fat %"/>
+
+    <EditText
+        android:id="@+id/editText_fatFree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Fat Free %"/>
+
+    <Button
+        android:id="@+id/button_submitBiopod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

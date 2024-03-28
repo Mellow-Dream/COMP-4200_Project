@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerDashboardActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome!"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginBottom="50dp"/>
+
+    <EditText
+        android:id="@+id/editText_playerView_studentID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student Number"
+        android:layout_marginTop="150dp"/>
+
+    <Button
+        android:id="@+id/button_view_player_testing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Your Testing Results"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/button_player_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:layout_marginTop="275dp"/>
+
+</LinearLayout>
