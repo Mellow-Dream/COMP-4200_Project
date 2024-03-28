@@ -20,6 +20,7 @@
         android:id="@+id/button_add_athlete_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/gold"
         android:text="Go Back"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"/>
@@ -76,6 +77,7 @@
         android:id="@+id/button_submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/gold"
         android:text="SUBMIT"
         android:layout_marginTop="20dp"/>
 

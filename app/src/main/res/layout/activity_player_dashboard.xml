@@ -27,6 +27,7 @@
         android:id="@+id/button_view_player_testing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/gold"
         android:text="View Your Testing Results"
         android:layout_marginTop="50dp"/>
 
@@ -34,6 +35,7 @@
         android:id="@+id/button_player_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/gold"
         android:text="LOGOUT"
         android:layout_marginTop="275dp"/>
 
