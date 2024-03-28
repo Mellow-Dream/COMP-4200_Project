@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoachViewRosterActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView_roster_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:textAlignment="center"
+        android:textSize="25dp"/>
+
+    <Button
+        android:id="@+id/button_roster_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/textView_roster_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        android:scrollbars="vertical"/>
+
+</LinearLayout>

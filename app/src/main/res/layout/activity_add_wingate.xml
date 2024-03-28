@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".addWingate"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView_add_wingate_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adding Wingate!"
+        android:textAlignment="center"
+        android:textSize="30dp"/>
+
+    <Button
+        android:id="@+id/button_wingate_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"/>
+
+    <EditText
+        android:id="@+id/editText_studentID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Student ID"/>
+
+    <EditText
+        android:id="@+id/editText_minPower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Min Power"/>
+
+    <EditText
+        android:id="@+id/editText_peakPower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Peak Power"/>
+
+    <EditText
+        android:id="@+id/editText_avgPower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Average Power"/>
+
+    <Button
+        android:id="@+id/button_submitWingate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".wingateActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView_wingate_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test"
+        android:textAlignment="center"
+        android:textSize="25dp"/>
+
+    <Button
+        android:id="@+id/button_wingate_return"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/textView_wingate_view"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:text=""
+        android:scrollbars="vertical"/>
+
+    <Button
+        android:id="@+id/button_generate_graph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Display Graph"/>
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
+
+</LinearLayout>

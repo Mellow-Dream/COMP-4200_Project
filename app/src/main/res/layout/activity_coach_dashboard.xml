@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoachDashboardActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView_welcome_coach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome Coach!"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        android:layout_marginBottom="50dp"/>
+
+    <Button
+        android:id="@+id/button_view_roster"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Athlete Roster"
+        android:layout_marginTop="25dp"/>
+
+    <Button
+        android:id="@+id/button_view_team_bodpod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Bodpod Testing" />
+
+    <Button
+        android:id="@+id/button_view_team_wingate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Wingate Testing" />
+
+    <Button
+        android:id="@+id/button_view_team_biodex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="View Biodex Testing" />
+
+    <Button
+        android:id="@+id/button_add_athlete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add an Athlete"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/button_add_bodpod"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Bodpod Test" />
+
+    <Button
+        android:id="@+id/button_add_wingate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Wingate Test" />
+
+    <Button
+        android:id="@+id/button_add_biodex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Biodex Test" />
+
+    <Button
+        android:id="@+id/button_coach_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGOUT"
+        android:layout_marginTop="75dp"/>
+
+</LinearLayout>
